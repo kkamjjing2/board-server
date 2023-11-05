@@ -2,7 +2,6 @@ package com.kkamjjing.boardserver.controller;
 
 import com.kkamjjing.boardserver.dto.BoardRequestDto;
 import com.kkamjjing.boardserver.dto.BoardResponseDto;
-import com.kkamjjing.boardserver.dto.DeleteRequestDto;
 import com.kkamjjing.boardserver.dto.UpdateRequestDto;
 import com.kkamjjing.boardserver.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +14,6 @@ import java.util.List;
 @RequestMapping("/boards")
 public class BoardController {
     private final BoardService boardService;
-
 
     @GetMapping()
     // 게시글 전체 조회
@@ -42,14 +40,13 @@ public class BoardController {
     // 게시글 수정
     public BoardResponseDto updateBoard (@PathVariable Long id,
                                          @RequestBody UpdateRequestDto updateRequestDto) {
-        return boardService.updateBoard (id, updateRequestDto);
+        return boardService.updateBoard(id, updateRequestDto);
     }
 
 
     @DeleteMapping("/{id}")
     // 게시글 삭제
-    public String deleteBoard (@PathVariable Long id,
-                               @RequestBody DeleteRequestDto deleteRequestDto) {
-        return boardService.deleteBoard(id, deleteRequestDto);
+    public String deleteBoard (@PathVariable Long id) {
+        return boardService.deleteBoard(id);
     }
 }

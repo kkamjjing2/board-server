@@ -1,15 +1,14 @@
 package com.kkamjjing.boardserver.entity;
 
 import com.kkamjjing.boardserver.dto.BoardRequestDto;
+import com.kkamjjing.boardserver.dto.UpdateRequestDto;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Getter
-@Table(name = "Board")
+//@Table(name = "Board")
 @NoArgsConstructor
 public class Board {
     @Id
@@ -39,7 +38,7 @@ public class Board {
         this.createAt = getCreateAt();
     }
 
-    public void update(BoardRequestDto requestDto) {
+    public void update(UpdateRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.name = requestDto.getName();
         this.password = requestDto.getPassword();
