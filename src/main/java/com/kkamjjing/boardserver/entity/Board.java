@@ -9,9 +9,8 @@ import lombok.Setter;
 
 @Entity
 @Getter
-@Setter
+@Table(name = "Board")
 @NoArgsConstructor
-@AllArgsConstructor
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,12 +31,12 @@ public class Board {
     @Column(nullable = false)
     private String createAt;
 
-    public Board (String title, String name, String password, String content, String createAt) {
-        this.title = title;
-        this.name = name;
-        this.password = password;
-        this.content = content;
-        this.createAt = createAt;
+    public Board (BoardRequestDto requestDto) {
+        this.title = getTitle();
+        this.name = getName();
+        this.password = getPassword();
+        this.content = getContent();
+        this.createAt = getCreateAt();
     }
 
     public void update(BoardRequestDto requestDto) {
