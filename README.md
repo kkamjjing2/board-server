@@ -8,3 +8,6 @@ Use Case Diagram
 
 API 명세서
 ![image](https://github.com/kkamjjing2/board-server/assets/148298032/35ebdd38-dec0-46af-99e5-45ad949f242a)
+
+ERD
+![image](https://github.com/kkamjjing2/board-server/assets/148298032/56d3fef2-7d39-44c5-9ad8-fb5514f07aa6)
